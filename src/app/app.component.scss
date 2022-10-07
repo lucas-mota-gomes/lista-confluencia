@@ -1,0 +1,44 @@
+.glass {
+  /* From https://css.glass */
+  /* From https://css.glass */
+  background: rgba(0, 0, 0, 0.29);
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid rgba(0, 0, 0, 1);
+  width: 25vw;
+  height: 100vh;
+  position: relative;
+}
+
+.table-div {
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
+button {
+  border-radius: 0;
+}
+
+@media (max-width: 641px) {
+  .glass {
+    width: 100vw;
+    margin-bottom: 1rem;
+  }
+
+  .table-div {
+    max-height: 25vh;
+    overflow-y: scroll;
+    height: 25vh;
+  }
+}
+
+.login-div {
+  background: rgba(0, 0, 0, 0.29);
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid rgba(0, 0, 0, 1);
+}
