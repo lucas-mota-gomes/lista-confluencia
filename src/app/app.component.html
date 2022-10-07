@@ -17,11 +17,10 @@
         </table>
       </div>
       <div class="d-flex flex-column mt-auto">
-        <input (keyup.enter)="newVal(model[i], i)" [(ngModel)]="model[i]" type="text">
-        <button (click)="array[i] = []" class="btn btn-danger">Limpar</button>
+        <!-- <input (keyup.enter)="newVal(model[i], i)" [(ngModel)]="model[i]" type="text"> -->
         <div class="d-flex">
           <button (click)="colar(i)" class="btn btn-success w-100">colar</button>
-          <button (click)="newVal(model[i], i)" class="btn btn-primary w-100">Inserir</button>
+          <button (click)="array[i] = []" class="btn btn-danger w-100">Limpar</button>
         </div>
       </div>
     </div>

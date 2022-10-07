@@ -13,7 +13,7 @@ export class AppComponent {
   public i2: any = '';
   public i3: any = '';
   public model = [this.i1, this.i2, this.i3];
-  public logged: boolean = false;
+  public logged: boolean = true;
   public user: string = '';
   public password: string = '';
 
@@ -27,7 +27,6 @@ export class AppComponent {
     let arr = this.array;
     if(a3.length == 0){
       arr.pop();
-      console.log("🚀 ~ file: app.component.ts ~ line 30 ~ AppComponent ~ getMatch ~ arr", arr)
     }
 
     let result = arr.shift().reduce(function (res: any[], v: any) {
@@ -45,7 +44,6 @@ export class AppComponent {
 
   public newVal(event: any, index: number) {
     let ar: string[] = this.array[index] ? this.array[index] : [];
-    console.log("🚀 ~ file: app.component.ts ~ line 27 ~ AppComponent ~ newVal ~ ar", ar)
     ar.push(event);
     this.array[index] = ar;
   }
@@ -76,8 +74,8 @@ export class AppComponent {
         }
       }
      )
-      .catch(error => {
-        console.error('Cannot read clipboard text: ', error);
+      .catch((error: any) => {
+        alert(`erro ao ler os dados copiados: ${JSON.stringify(error)}`);
       }
     );
   }
