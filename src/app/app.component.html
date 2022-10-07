@@ -19,7 +19,10 @@
       <div class="d-flex flex-column mt-auto">
         <input (keyup.enter)="newVal(model[i], i)" [(ngModel)]="model[i]" type="text">
         <button (click)="array[i] = []" class="btn btn-danger">Limpar</button>
-        <button (click)="newVal(model[i], i)" class="btn btn-primary">Inserir</button>
+        <div class="d-flex">
+          <button (click)="colar(i)" class="btn btn-success w-100">colar</button>
+          <button (click)="newVal(model[i], i)" class="btn btn-primary w-100">Inserir</button>
+        </div>
       </div>
     </div>
     <div class="glass text-center d-flex flex-column me-3">

@@ -25,6 +25,10 @@ export class AppComponent {
     let a2 = this.array[1];
     let a3 = this.array[2];
     let arr = this.array;
+    if(a3.length == 0){
+      arr.pop();
+      console.log("🚀 ~ file: app.component.ts ~ line 30 ~ AppComponent ~ getMatch ~ arr", arr)
+    }
 
     let result = arr.shift().reduce(function (res: any[], v: any) {
       if (res.indexOf(v) === -1 && arr.every(function (a) {
@@ -61,6 +65,21 @@ export class AppComponent {
     else{
       alert('usuário ou senha incorretos');
     }
+  }
+
+  public colar(index: number){
+    navigator.clipboard.readText().then(
+      text => {
+        const result = text.split(/\r?\n/);
+        for (const i of result) {
+          this.array[index].push(i);
+        }
+      }
+     )
+      .catch(error => {
+        console.error('Cannot read clipboard text: ', error);
+      }
+    );
   }
 
 }
