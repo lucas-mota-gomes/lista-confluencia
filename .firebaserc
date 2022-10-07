@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "lista-confluencia",
+    "prod": "lista-confluencia"
+  },
+  "targets": {
+    "lista-confluencia": {
+      "hosting": {
+        "lista-confluencia": [
+          "lista-confluencia"
+        ]
+      }
+    }
+  }
+}
