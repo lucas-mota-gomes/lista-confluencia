@@ -25,7 +25,7 @@ export class AppComponent {
     let a2 = this.array[1];
     let a3 = this.array[2];
     let arr = this.array;
-    if(a3.length == 0){
+    if (a3.length == 0) {
       arr.pop();
     }
 
@@ -50,22 +50,22 @@ export class AppComponent {
 
   public copy() {
     let text: string = '';
-    for (const i of this.array2) {
-      text = text + ` ${i}`
+    for (const value of this.array2) {
+      text = text + `\n${value}`
     }
     this.clipboard.copy(text);
   }
 
   public logar() {
-    if(this.user == 'admin' && this.password == 'admin123'){
+    if (this.user == 'admin' && this.password == 'admin123') {
       this.logged = true;
     }
-    else{
+    else {
       alert('usuário ou senha incorretos');
     }
   }
 
-  public colar(index: number){
+  public colar(index: number) {
     navigator.clipboard.readText().then(
       text => {
         const result = text.split(/\r?\n/);
@@ -73,11 +73,11 @@ export class AppComponent {
           this.array[index].push(i);
         }
       }
-     )
+    )
       .catch((error: any) => {
         alert(`erro ao ler os dados copiados: ${JSON.stringify(error)}`);
       }
-    );
+      );
   }
 
 }
