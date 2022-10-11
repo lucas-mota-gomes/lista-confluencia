@@ -1,0 +1,67 @@
+<section *ngIf="logged; else login">
+  <div class="d-flex flex-column flex-md-row px-5 p-lg-0 align-items-center" style="height: 100vh; width: 100vw">
+    <ng-container *ngFor="let item of array; let i = index">
+      <h4>Lista {{i + 1}}</h4>
+      <div class="glass text-center d-flex flex-column me-3">
+        <div class="table-div">
+          <table class="table">
+            <thead>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of array[i]">
+                <th scope="row">{{item}}</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="d-flex flex-column mt-auto">
+          <!-- <input (keyup.enter)="newVal(model[i], i)" [(ngModel)]="model[i]" type="text"> -->
+          <div class="d-flex">
+            <button (click)="colar(i)" style="background: #404040;" class="btn btn-success w-100 fw-bold">colar</button>
+            <button (click)="array[i] = []" style="background: #bf0000" class="btn btn-danger w-100 fw-bold">limpar</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <button (click)="getMatch()" style="background: #404040" class="btn btn-primary me-3 fw-bold botao mt-4">Fazer confluência</button>
+    <h4>Lista Confluência</h4>
+    <div class="glass text-center d-flex flex-column me-3">
+      <div class="table-div">
+        <table class="table">
+          <thead>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of array2">
+              <th scope="row">{{item}}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-auto">
+        <div class="d-flex">
+          <button (click)="copy()" class="btn btn-success w-100 fw-bold" style="background: #404040;">Copiar</button>
+          <button (click)="array = [[],[],[]]; array2 = []" class="btn btn-danger w-100 fw-bold" style="background: #bf0000">Limpar tudo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-template #login>
+  <section style="width: 100vw; height: 100vh; justify-content: center; align-items: center; display: flex;">
+    <div class="login-div p-4">
+      <div class="mb-3">
+        <label for="user" class="d-block">Usuário</label>
+        <input [(ngModel)]="user" id="user" type="text">
+      </div>
+      <div class="mb-3">
+        <label for="senha" class="d-block">Senha</label>
+        <input [(ngModel)]="password" id="senha" type="password">
+      </div>
+      <div class="text-center">
+        <button (click)="logar()" class="btn btn-success">Entrar</button>
+      </div>
+    </div>
+  </section>
+</ng-template>
+<router-outlet></router-outlet>

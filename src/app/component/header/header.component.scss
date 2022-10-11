@@ -1,0 +1,14 @@
+.header-component {
+  background-color: #3f3f3f;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  color: white;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  margin-bottom: 2rem;
+  & h4{
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}

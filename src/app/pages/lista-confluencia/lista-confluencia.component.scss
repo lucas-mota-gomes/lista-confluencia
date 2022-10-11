@@ -1,0 +1,54 @@
+.glass {
+  /* From https://css.glass */
+  /* From https://css.glass */
+  border: 1px solid gray;
+  width: 25vw;
+  height: 100vh;
+  position: relative;
+}
+
+.table-div {
+  max-height: 100%;
+  overflow-y: scroll;
+}
+
+button {
+  border-radius: 0;
+}
+
+.botao{
+  width: 25vw;
+}
+
+.table-div {
+  max-height: 15vh;
+  overflow-y: scroll;
+  height: 15vh;
+}
+
+@media (max-width: 641px) {
+  .glass {
+    width: 70vw;
+    margin-bottom: 1rem;
+  }
+
+  .botao {
+    margin-top: 1rem;
+    width: 70vw;
+  }
+
+  .table-div {
+    max-height: 25vh;
+    overflow-y: scroll;
+    height: 25vh;
+  }
+}
+
+.login-div {
+  background: rgba(0, 0, 0, 0.29);
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border: 1px solid rgba(0, 0, 0, 1);
+}

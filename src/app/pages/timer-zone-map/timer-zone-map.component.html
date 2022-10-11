@@ -1,0 +1,38 @@
+<section class="d-flex flex-column justify-content-center align-items-center w-100 h-100 text-center">
+<div>
+  <h3 class="fw-bold">Trader Timer Zone</h3>
+    <div class="border-1 rounded p-4">
+      <div *ngIf="gotHtml" class="table-div">
+        <table class="time-table">
+          <thead>
+            <tr>
+              <th style="width: 30%">Data</th>
+              <th style="width: 30%">Hora</th>
+              <th style="width: 40%">Zona</th>
+            </tr>
+          </thead>
+          <tbody [innerHtml]="gotHtml"></tbody>
+        </table>
+      </div>
+      <div *ngIf="!gotHtml">
+        <label for="sinais" class="d-block">Sinais</label>
+        <textarea id="sinais" pInputTextarea [autoResize]="true" [(ngModel)]="sinais"></textarea>
+      </div>
+      <div>
+        <div class="my-3">
+          <label for="calendar" class="d-block">Data</label>
+          <p-calendar id="calendar" [(ngModel)]="calendar" dataType="string" dateFormat="dd/mm/yy"></p-calendar>
+        </div>
+        <div class="my-3">
+          <label for="drop" class="d-block">Tempo</label>
+          <p-dropdown
+            [options]="[{label: '1 Minuto', value: 1}, {label: '5 Minutos', value: 5}, {label: '15 Minutos', value: 15}, {label: '60 Minutos', value: 60}]"
+            [(ngModel)]="time" placeholder="Selecionar..." optionValue="value" optionLabel="label" id="drop"></p-dropdown>
+        </div>
+        <div class="my-3">
+          <button (click)="gotHtml ? reset() : getZone()" [disabled]="!calendar || !sinais || !time" pButton type="button" label="{{gotHtml ? 'Resetar' : 'Gerar lista'}}"></button>
+        </div>
+      </div>
+    </div>
+</div>
+</section>

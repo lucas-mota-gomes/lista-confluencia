@@ -1,0 +1,10 @@
+<header class="header-component">
+  <div>
+    <h4 routerLink="/home">HOME</h4>
+  </div>
+  <div>
+    <h4 (click)="menu.toggle($event)">MENU</h4>
+    <p-menu #menu [popup]="true" [model]="items"></p-menu>
+  </div>
+</header>
+<router-outlet></router-outlet>
