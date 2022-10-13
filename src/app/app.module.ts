@@ -18,6 +18,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { HeaderComponent } from './component/header/header.component';
 import { MenuModule } from 'primeng/menu';
+import { ToastModule } from 'primeng/toast';
+import {MessageService} from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -39,9 +41,10 @@ import { MenuModule } from 'primeng/menu';
     ButtonModule,
     DropdownModule,
     InputTextareaModule,
-    MenuModule
+    MenuModule,
+    ToastModule
   ],
-  providers: [TimerZoneService],
+  providers: [TimerZoneService, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

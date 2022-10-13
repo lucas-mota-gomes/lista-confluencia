@@ -1,9 +1,9 @@
 <section class="d-flex flex-column justify-content-center align-items-center w-100 h-100 text-center">
-<div>
-  <h3 class="fw-bold">Trader Timer Zone</h3>
+  <div>
+    <h3 class="fw-bold" (click)="copy()">Trader Timer Zone</h3>
     <div class="border-1 rounded p-4">
       <div *ngIf="gotHtml" class="table-div">
-        <table class="time-table">
+        <table class="time-table" id="table">
           <thead>
             <tr>
               <th style="width: 30%">Data</th>
@@ -16,7 +16,8 @@
       </div>
       <div *ngIf="!gotHtml">
         <label for="sinais" class="d-block">Sinais</label>
-        <textarea id="sinais" pInputTextarea [autoResize]="true" [(ngModel)]="sinais"></textarea>
+        <textarea (ngModelChange)="colar()" id="sinais" pInputTextarea [autoResize]="true"
+          [(ngModel)]="sinais"></textarea>
       </div>
       <div>
         <div class="my-3">
@@ -27,12 +28,16 @@
           <label for="drop" class="d-block">Tempo</label>
           <p-dropdown
             [options]="[{label: '1 Minuto', value: 1}, {label: '5 Minutos', value: 5}, {label: '15 Minutos', value: 15}, {label: '60 Minutos', value: 60}]"
-            [(ngModel)]="time" placeholder="Selecionar..." optionValue="value" optionLabel="label" id="drop"></p-dropdown>
+            [(ngModel)]="time" placeholder="Selecionar..." optionValue="value" optionLabel="label" id="drop">
+          </p-dropdown>
         </div>
-        <div class="my-3">
-          <button (click)="gotHtml ? reset() : getZone()" [disabled]="!calendar || !sinais || !time" pButton type="button" label="{{gotHtml ? 'Resetar' : 'Gerar lista'}}"></button>
+        <div class="my-3 d-flex justify-content-center">
+          <button (click)="gotHtml ? reset() : getZone()" [disabled]="!calendar || !sinais || !time" pButton
+            type="button" class="me-3" label="{{gotHtml ? 'Resetar' : 'Gerar lista'}}"></button>
+            <button (click)="copy()" *ngIf="gotHtml" pButton
+            type="button" label="Copiar"></button>
         </div>
       </div>
     </div>
-</div>
+  </div>
 </section>

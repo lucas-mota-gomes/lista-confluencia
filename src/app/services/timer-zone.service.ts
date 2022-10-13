@@ -13,7 +13,7 @@ export class TimerZoneService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     });
-    return this.http.post(`https://tradertimerzone.com/handle.php`, payload, { headers, responseType: 'text' }).toPromise();
+    return this.http.post(`https://oracle.garrysmod.com.br/https://tradertimerzone.com/handle.php`, payload, { headers, responseType: 'text' }).toPromise();
   }
 
   public minify(payload: any){
@@ -23,6 +23,6 @@ export class TimerZoneService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
     });
-    return this.http.post(`https://htmlcompressor.com/compress`, data, { headers, responseType: 'text' }).toPromise();
+    return this.http.post(`https://oracle.garrysmod.com.br/https://htmlcompressor.com/compress`, data, { headers, responseType: 'text' }).toPromise();
   }
 }
